@@ -40,6 +40,7 @@ export default defineComponent({
             .if(!props.isShow, () => w.add.transform(`translateY(100%)`))
             .add.borderRadius(px(5), px(10), px(0), px(0))
             .add.transition(["all", ms(the.duration.out(w)), "ease"])
+            .add.boxShadow(px(0), px(2), px(2), the.color2.out(w))
 
             .out()}
         >

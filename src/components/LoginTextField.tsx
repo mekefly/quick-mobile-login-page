@@ -33,6 +33,12 @@ export default defineComponent({
           type={
             props.icon === "lock" || props.icon === "key" ? "password" : "text"
           }
+          class={w.add
+            .color(the.color1.out(w))
+            .class("input")
+            .add.color(the.color1.out(w))
+            .pseudo("::placeholder")
+            .out()}
           style={w.add
             .flex(1)
             .add.minWidth(px(0))

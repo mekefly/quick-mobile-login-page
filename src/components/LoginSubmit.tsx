@@ -25,6 +25,7 @@ export default defineComponent({
         .add.overflow("hidden")
 
         .add.transition("all", ms(the.duration.out(w)), "ease")
+        .add.pointerEvents("none")
         .out();
 
       return (
@@ -38,15 +39,27 @@ export default defineComponent({
             .out()}
         >
           <input
+            class={w.add
+              .background(
+                mixColor(the.color1.out(w), the.color2.out(w).clone().setA(0.3))
+              )
+              .class("input")
+              .add.background(
+                mixColor(the.color1.out(w), the.color2.out(w).clone().setA(0.5))
+              )
+              .pseudo(":hover")
+              .add.background(
+                mixColor(the.color1.out(w), the.color2.out(w).clone().setA(0.8))
+              )
+              .pseudo(":active")
+              .out()}
             style={w.add
               .display("block")
               .add.flex(1)
               .add.height(px(rowHeight))
               .add.border("none")
               .add.outline("none")
-              .add.background(
-                mixColor(the.color1.out(w), the.color2.out(w).clone().setA(0.5))
-              )
+              .add.transition("all", ms(the.duration.out(w) / 3), "ease")
               .out()}
             type="button"
             value=""
